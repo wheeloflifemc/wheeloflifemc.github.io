@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Which do you want to submit to?</title>
+	<style>
+		.popup {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			padding: 20px;
+			background-color: #fff;
+			border: 1px solid #000;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+			z-index: 9999;
+		}
+		.popup h2 {
+			margin-top: 0;
+		}
+		.popup button {
+			display: block;
+			margin: 10px auto;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+		}
+		.padlet-icon {
+			background-image: url("https://padlet.com/favicon.ico");
+			background-size: contain;
+			background-repeat: no-repeat;
+			width: 50px;
+			height: 50px;
+			margin-right: 10px;
+			display: inline-block;
+			vertical-align: middle;
+		}
+		.monday-icon {
+			background-image: url("https://wheeloflife.my.canva.site/images/0b44504ecea3873ce215dd8ad8b19f1e.svg");
+			background-size: contain;
+			background-repeat: no-repeat;
+			width: 50px;
+			height: 50px;
+			margin-right: 10px;
+			display: inline-block;
+			vertical-align: middle;
+		}
+	</style>
+</head>
+<body>
+	<div class="popup">
+		<h2>Which site do you want to submit on?</h2>
+		<p>We have 2 ways :)</p>
+		<button onclick="window.location.href='https://padlet.com/wheeloflife/ideas'"><span class="padlet-icon"></span>Padlet</button>
+		<button onclick="window.location.href='https://wkf.ms/44KBlEp'"><span class="monday-icon"></span>Monday</button>
+	</div>
+	<script>
+		window.onload = function() {
+			document.querySelector('.popup').style.display = 'block';
+		}
+	</script>
+</body>
+</html>
