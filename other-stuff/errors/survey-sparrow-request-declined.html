@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Submission Status</title>
+	<style>
+		.popup {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			z-index: 1;
+		}
+		.popup h1 {
+			color: red;
+			font-size: 72px;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			margin-top: 0;
+			margin-bottom: 50px;
+		}
+		.popup p {
+			color: black;
+			font-size: 24px;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			margin-top: 0;
+			margin-bottom: 50px;
+			text-align: center;
+		}
+		.popup button {
+			padding: 10px 20px;
+			background-color: #fff;
+			border: 2px solid red;
+			border-radius: 10px;
+			font-size: 18px;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div class="popup" id="popup">
+		<h1>Submission declined.</h1>
+		<p id="message"></p>
+		<button id="support">Contact support</button>
+	</div>
+	<script>
+		window.onload = function() {
+			var urlParams = new URLSearchParams(window.location.search);
+			var reason = urlParams.get('reason');
+			var message = document.getElementById('message');
+			if (reason === 'q1') {
+				message.innerHTML = 'You attempted to put an offensive name into the form.';
+			} else if (reason === null || reason === '') {
+				message.innerHTML = 'Something went wrong and we could not get the reason why your form was denied, if you keep receiving this error, please contact a staff member.';
+			} else {
+				message.innerHTML = 'Something went wrong and we could not get the reason why your form was denied, if you keep receiving this error, please contact a staff member.';
+			}
+			var support = document.getElementById('support');
+			support.onclick = function() {
+				window.location.href = 'https://wheeloflife.my.canva.site/#support';
+			}
+			document.getElementById('popup').style.display = 'flex';
+		}
+	</script>
+</body>
+</html>
