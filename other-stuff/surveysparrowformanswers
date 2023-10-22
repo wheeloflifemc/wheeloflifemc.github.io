@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your form answers</title>
+</head>
+<body>
+  <h1>Your form answers:</h1>
+  <ul id="result"></ul>
+
+  <script>
+    // Get the URL parameters
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    // Display the parameters and their values on the page
+    const result = document.getElementById('result');
+    for (const [key, value] of urlParams) {
+      const li = document.createElement('li');
+      li.textContent = `${key}: ${value}`;
+      result.appendChild(li);
+    }
+  </script>
+</body>
+</html>
